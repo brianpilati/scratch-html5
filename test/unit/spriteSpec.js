@@ -169,7 +169,8 @@ describe('Sprite', function() {
       expect($('.ask-container').css('bottom')).toBe('7px');
       expect($('.ask-container').css('height')).toBe('25px');
       expect($('.ask-container').css('height')).toBe('25px');
-      expect($('.ask-text-field').is(':focus')).toBe(true);
+      //expect($('.ask-text-field').is(':focus')).toBe(true);
+      expect($('.ask-text-field').get(0) == document.activeElement).toBe(true);
       expect(spriteProto.askInputOn).toBe(true);
     });
 
@@ -209,6 +210,10 @@ describe('Sprite', function() {
       spyOn(spriteProto, "hideAsk");
     });
 
+    afterEach(function() {
+      //interp = realInterp;
+    });
+
     it('should bind to the askInputButton and handle a click', function() {
       interp = new interpreterMock();
       spyOn(interp, "targetStage").andCallThrough();
@@ -226,7 +231,6 @@ describe('Sprite', function() {
       $(spriteProto.askInputButton).trigger(e);
       expect(interp.targetStage).toHaveBeenCalled();
     });
-
 
     it('should call hideBubble', function() {
       spriteProto.bindDoAskButton();
@@ -363,7 +367,6 @@ describe('Sprite', function() {
         expect($('.ask-container').css('display')).toBe('none');
       });
     });
-
   });
 
   describe('setVisible', function() {
