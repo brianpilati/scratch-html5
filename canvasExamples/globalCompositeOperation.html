@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src=//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js></script>
+    <link rel=stylesheet href=/canvasExamples/css/canvas.css>
+    <script>
+      $(document).ready(function() {
+        var spriteCalculation = new SpriteCalculation();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="layout">
+      <div id="affects"><select id="affectsSelect"></select></div>
+      <div id="images"><select id="imagesSelect"></select></div>
+      <div id="calculationTime"></div>
+      <div id="orgImage" class="canvasSize"></div>
+      <div id="sprite" class="canvasSize"></div>
+      <div id="composite" class="canvasSize"></div>
+      <div id="displayImages"></div>
+    </div>
+  </body>
+  <script type="text/JavaScript" src="js/spriteCalculation.js"></script> 
+  <script type="text/JavaScript" src="http://underscorejs.org/underscore-min.js"></script> 
+</html>
